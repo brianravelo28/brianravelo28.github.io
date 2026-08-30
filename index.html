@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian Blitz — Data Analysis Portfolio</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --bg-elev: #161c24;
+    --border: #262f3a;
+    --text: #e8edf2;
+    --text-muted: #9aa7b5;
+    --accent: #5b9dd9;
+    --accent-soft: rgba(91,157,217,0.12);
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 88px 0 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 { font-size: 2.4rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .hero .role { color: var(--text-muted); font-size: 1.05rem; margin: 0 0 24px; }
+  .hero .pitch {
+    font-size: 1.15rem;
+    max-width: 640px;
+    color: var(--text);
+    margin: 0 0 28px;
+  }
+  .links { display: flex; gap: 14px; flex-wrap: wrap; }
+  .links a {
+    padding: 9px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 0.92rem;
+  }
+  .links a:hover { border-color: var(--accent); text-decoration: none; background: var(--accent-soft); }
+
+  section { padding: 56px 0; }
+  section h2 {
+    font-size: 1.5rem;
+    margin: 0 0 8px;
+  }
+  section .section-sub {
+    color: var(--text-muted);
+    margin: 0 0 32px;
+    font-size: 0.98rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card .industry { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+  .card h3 { margin: 0; font-size: 1.08rem; line-height: 1.35; }
+  .card .finding { color: var(--text-muted); font-size: 0.92rem; flex-grow: 1; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tags span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .card-links { display: flex; gap: 14px; margin-top: 4px; font-size: 0.88rem; }
+
+  .about { max-width: 700px; }
+  .about p { color: var(--text-muted); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0 60px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  footer .links a { color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Brian Blitz</h1>
+    <p class="role">Data Analyst · Las Vegas, NV</p>
+    <p class="pitch">
+      I build interpretable, deployable ML systems for high-stakes industries. I've spent my career in
+      environments where analytical errors have real consequences — a restaurant lives or dies on margins,
+      an NGO allocates scarce resources under legal constraints, a sportsbook loses money to customers who
+      are smarter than the line. That domain grounding distinguishes this portfolio from candidates who have
+      credentials but not context.
+    </p>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="https://github.com/brianravelo28" target="_blank">GitHub</a>
+      <a href="mailto:brian.blitz28@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Portfolio — 8 Projects, South Florida Market Focus</h2>
+    <p class="section-sub">Healthcare · Finance · Supply Chain · Database/NLP · Real Estate · Tourism · Agriculture · Insurance</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <span class="industry">Healthcare</span>
+        <h3>Synthetic Hospital Database</h3>
+        <p class="finding">17-table, research-grounded synthetic hospital database with a generate-validate-repair data quality pipeline — no PHI, built from peer-reviewed clinical/operational schemas.</p>
+        <div class="tags"><span>MySQL</span><span>SQLAlchemy</span><span>Tableau</span></div>
+        <div class="card-links">
+          <a href="https://github.com/brianravelo28" target="_blank">Code →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="industry">Finance</span>
+        <h3>NLP Market Sentiment & Bot Manipulation</h3>
+        <p class="finding">Weak sentiment-return correlation turns out to be the interesting result — bot prevalence appears to suppress the organic sentiment signal in equity Twitter data.</p>
+        <div class="tags"><span>NLP</span><span>Granger Causality</span><span>Statsmodels</span></div>
+        <div class="card-links">
+          <a href="https://github.com/brianravelo28" target="_blank">Code →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="industry">Supply Chain</span>
+        <h3>Rossmann Demand Forecasting</h3>
+        <p class="finding">ARIMA vs. LightGBM on retail demand — documenting where ARIMA's stationarity assumptions break on promotion- and holiday-driven sales data.</p>
+        <div class="tags"><span>ARIMA</span><span>LightGBM</span><span>Tableau</span></div>
+        <div class="card-links">
+          <a href="https://github.com/brianravelo28" target="_blank">Code →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="industry">Database / NLP</span>
+        <h3>SQL Analytics Engine with NLP Query Interface</h3>
+        <p class="finding">Text-to-SQL interface over a normalized analytical schema — plain-English questions translated to validated SQL via an LLM query layer.</p>
+        <div class="tags"><span>SQL</span><span>LangChain</span><span>Claude API</span></div>
+        <div class="card-links">
+          <a href="https://github.com/brianravelo28" target="_blank">Code →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="industry">Real Estate</span>
+        <h3>Miami Property Price Estimator</h3>
+        <p class="finding">Geospatial price model where flood-zone risk and coastal proximity are first-class features — VE zones expected to show a premium despite highest risk.</p>
+        <div class="tags"><span>GeoPandas</span><span>LightGBM</span><span>SHAP</span><span>Plotly Dash</span></div>
+        <div class="card-links">
+          <a href="https://github.com/brianravelo28" target="_blank">Code →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="industry">Tourism</span>
+        <h3>Hotel Review Sentiment & Reputation Dashboard</h3>
+        <p class="finding">Multilingual (English + Spanish) sentiment and topic modeling across Miami/Orlando hotel reviews — reputation scoring and competitor benchmarking.</p>
+        <div class="tags"><span>BERTopic</span><span>XLM-RoBERTa</span></div>
+        <div class="card-links">
+          <a href="https://github.com/brianravelo28" target="_blank">Code →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="industry">Agriculture</span>
+        <h3>Florida Crop Yield Forecasting</h3>
+        <p class="finding">Weather-driven yield forecasting for Florida citrus or strawberry — frost days and rainfall expected to dominate feature importance.</p>
+        <div class="tags"><span>USDA NASS</span><span>NOAA</span><span>LightGBM</span></div>
+        <div class="card-links">
+          <a href="https://github.com/brianravelo28" target="_blank">Code →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="industry">Insurance</span>
+        <h3>Florida Hurricane Claim Severity Predictor</h3>
+        <p class="finding">Per-property Annual Expected Loss scoring from FEMA NFIP claims and NOAA storm tracks — Florida accounts for 79% of US homeowner insurance lawsuits.</p>
+        <div class="tags"><span>FastAPI</span><span>SHAP</span><span>GeoPandas</span></div>
+        <div class="card-links">
+          <a href="https://github.com/brianravelo28" target="_blank">Code →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <h2>Background</h2>
+    <p>
+      This portfolio bridges a decade of experience in high-stakes operational environments — hospitality,
+      humanitarian services, and financial risk — with a formal data science skill set built through an
+      M.S. in Data Analytics and applied project work. Two years as an equity trader at William Hill /
+      Caesars Sportsbook, including market analysis and data-driven presentations to leadership, is the
+      most directly transferable professional data science experience and grounds several of the projects
+      above, particularly the market sentiment and risk-modeling work.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="https://github.com/brianravelo28" target="_blank">GitHub</a> ·
+      <a href="mailto:brian.blitz28@gmail.com">brian.blitz28@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
