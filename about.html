@@ -2,43 +2,59 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script src="assets/lang-early.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Brian Blitz</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-title-en="About — Brian Blitz" data-title-es="Acerca de — Brian Blitz">
 
 <nav class="site-nav">
   <div class="wrap">
     <span class="brand">Brian Blitz</span>
     <div class="tabs">
-      <a href="index.html">Start Here</a>
-      <a href="about.html" class="active">About</a>
-      <a href="books.html">Books</a>
-      <a href="podcasts.html">Podcasts</a>
-      <a href="articles.html">Articles</a>
-      <a href="assets/Blitz.Brian_Resume.pdf" target="_blank">Resume</a>
+      <a href="index.html"><span data-lang="en">Start Here</span><span data-lang="es" hidden>Inicio</span></a>
+      <a href="about.html" class="active"><span data-lang="en">About</span><span data-lang="es" hidden>Acerca de</span></a>
+      <a href="books.html"><span data-lang="en">Books</span><span data-lang="es" hidden>Libros</span></a>
+      <a href="podcasts.html"><span data-lang="en">Podcasts</span><span data-lang="es" hidden>Podcasts</span></a>
+      <a href="articles.html"><span data-lang="en">Articles</span><span data-lang="es" hidden>Artículos</span></a>
+      <a href="assets/Blitz.Brian_Resume.pdf" target="_blank"><span data-lang="en">Resume</span><span data-lang="es" hidden>Currículum</span></a>
+      <div class="lang-toggle">
+        <button type="button" data-set-lang="en" aria-label="English"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#B22234"/><rect y="1.08" width="20" height="1.08" fill="#fff"/><rect y="3.23" width="20" height="1.08" fill="#fff"/><rect y="5.38" width="20" height="1.08" fill="#fff"/><rect y="7.54" width="20" height="1.08" fill="#fff"/><rect y="9.69" width="20" height="1.08" fill="#fff"/><rect y="11.85" width="20" height="1.08" fill="#fff"/><rect width="8" height="7.54" fill="#3C3B6E"/></svg></button>
+        <button type="button" data-set-lang="es" aria-label="Español"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect y="3.5" width="20" height="7" fill="#F1BF00"/></svg></button>
+      </div>
     </div>
   </div>
 </nav>
 
 <header class="page-head">
   <div class="wrap">
-    <h1>About</h1>
-    <p class="dek">Work experience, the data portfolio, and coursework — the fuller version of the resume.</p>
+    <h1><span data-lang="en">About</span><span data-lang="es" hidden>Acerca de</span></h1>
+    <p class="dek">
+      <span data-lang="en">Work experience, the data portfolio, and coursework — the fuller version of the resume.</span>
+      <span data-lang="es" hidden>Experiencia laboral, el portafolio de datos y la formación — la versión más completa del currículum.</span>
+    </p>
   </div>
 </header>
 
 <section id="work-experience">
   <div class="wrap about-page-content">
-    <h2>Work Experience</h2>
-    <p>
+    <h2><span data-lang="en">Work Experience</span><span data-lang="es" hidden>Experiencia Laboral</span></h2>
+    <p data-lang="en">
       This portfolio bridges a decade of experience in high-stakes operational environments — hospitality,
       humanitarian services, and financial risk — with a formal data science skill set built through an
       M.S. in Data Analytics and applied project work.
     </p>
-    <h3>Equity Trader — William Hill / Caesars Sportsbook</h3>
-    <p>
+    <p data-lang="es" hidden>
+      Este portafolio conecta una década de experiencia en entornos operativos de alto riesgo — hospitalidad,
+      servicios humanitarios y riesgo financiero — con un conjunto formal de habilidades en ciencia de datos,
+      desarrollado a través de una Maestría en Analítica de Datos y proyectos aplicados.
+    </p>
+    <h3>
+      <span data-lang="en">Equity Trader — William Hill / Caesars Sportsbook</span>
+      <span data-lang="es" hidden>Trader de Apuestas — William Hill / Caesars Sportsbook</span>
+    </h3>
+    <p data-lang="en">
       August 2024 – current, Las Vegas, NV. Implemented a data-driven optimization strategy that improved
       performance metrics by 3–5% annually within key NBA markets. Built performance monitoring systems in
       Excel, Python, R, and Power BI, presented weekly via company-wide reports. Built an end-to-end pipeline
@@ -47,100 +63,128 @@
       professional data science experience in the portfolio, and grounds the market sentiment and risk-modeling
       projects below.
     </p>
-    <h3>HR Data Analyst — Nance Staffing</h3>
-    <p>
+    <p data-lang="es" hidden>
+      Agosto de 2024 – actualidad, Las Vegas, NV. Implementé una estrategia de optimización basada en datos que
+      mejoró las métricas de rendimiento entre un 3–5% anual en mercados clave de la NBA. Desarrollé sistemas de
+      monitoreo de rendimiento en Excel, Python, R y Power BI, presentados semanalmente en informes a nivel de
+      toda la empresa. Construí un pipeline integral de investigación comparativa de líneas y precios frente a
+      proyecciones de los principales centros de análisis predictivo, mejorando las métricas anuales entre un
+      1–3% en los mercados de NFL, NCAAF y NBA. Esta es la experiencia profesional en ciencia de datos más
+      directamente transferible del portafolio, y sirve de base para los proyectos de sentimiento de mercado y
+      modelado de riesgo que se muestran a continuación.
+    </p>
+    <h3>
+      <span data-lang="en">HR Data Analyst — Nance Staffing</span>
+      <span data-lang="es" hidden>Analista de Datos de RR. HH. — Nance Staffing</span>
+    </h3>
+    <p data-lang="en">
       January 2023 – July 2024, Remote. Engineered Python scripts to improve data quality while automating the
       processing and filtering of 10,000+ applicants per month. Designed a MySQL database architecture for
       structured data management and reporting. Built 7+ interactive Tableau dashboards for stakeholder reporting.
     </p>
+    <p data-lang="es" hidden>
+      Enero de 2023 – julio de 2024, Remoto. Desarrollé scripts en Python para mejorar la calidad de los datos,
+      automatizando el procesamiento y filtrado de más de 10,000 postulantes al mes. Diseñé una arquitectura de
+      base de datos en MySQL para la gestión estructurada de datos y reportes. Construí más de 7 dashboards
+      interactivos en Tableau para reportes a las partes interesadas.
+    </p>
     <p>
-      Full work history, education, and skills: <a href="assets/Blitz.Brian_Resume.pdf" target="_blank">resume (PDF)</a>.
+      <span data-lang="en">Full work history, education, and skills: <a href="assets/Blitz.Brian_Resume.pdf" target="_blank">resume (PDF)</a>.</span>
+      <span data-lang="es" hidden>Historial laboral completo, formación académica y habilidades: <a href="assets/Blitz.Brian_Resume.pdf" target="_blank">currículum (PDF)</a>.</span>
     </p>
   </div>
 </section>
 
 <section id="data-portfolio">
   <div class="wrap">
-    <h2>Data Portfolio</h2>
+    <h2><span data-lang="en">Data Portfolio</span><span data-lang="es" hidden>Portafolio de Datos</span></h2>
 
     <div class="grid">
 
       <div class="card reveal">
-        <span class="industry">Healthcare</span>
-        <h4>Synthetic Hospital Database</h4>
+        <span class="industry"><span data-lang="en">Healthcare</span><span data-lang="es" hidden>Salud</span></span>
+        <h4><span data-lang="en">Synthetic Hospital Database</span><span data-lang="es" hidden>Base de Datos Hospitalaria Sintética</span></h4>
         <a class="card-photo" href="https://github.com/brianravelo28/synthetic-hospital-db" target="_blank" title="View code on GitHub">
           <img src="assets/photos/healthcare.jpg" alt="" loading="lazy">
-          <p class="finding">17-table, research-grounded synthetic hospital database with a generate-validate-repair data quality pipeline — no PHI, built from peer-reviewed clinical/operational schemas.</p>
+          <p class="finding" data-lang="en">17-table, research-grounded synthetic hospital database with a generate-validate-repair data quality pipeline — no PHI, built from peer-reviewed clinical/operational schemas.</p>
+          <p class="finding" data-lang="es" hidden>Base de datos hospitalaria sintética de 17 tablas, fundamentada en investigación, con un pipeline de generación-validación-reparación para la calidad de los datos — sin PHI, construida a partir de esquemas clínicos/operativos revisados por pares.</p>
         </a>
         <div class="tags"><span>MySQL</span><span>SQLAlchemy</span><span>Tableau</span></div>
       </div>
 
       <div class="card reveal">
-        <span class="industry">Finance</span>
-        <h4>NLP Market Sentiment & Bot Manipulation</h4>
+        <span class="industry"><span data-lang="en">Finance</span><span data-lang="es" hidden>Finanzas</span></span>
+        <h4><span data-lang="en">NLP Market Sentiment & Bot Manipulation</span><span data-lang="es" hidden>Sentimiento de Mercado con NLP y Manipulación por Bots</span></h4>
         <a class="card-photo" href="https://github.com/brianravelo28" target="_blank" title="View code on GitHub">
           <img src="assets/photos/finance.jpg" alt="" loading="lazy">
-          <p class="finding">Weak sentiment-return correlation turns out to be the interesting result — bot prevalence appears to suppress the organic sentiment signal in equity Twitter data.</p>
+          <p class="finding" data-lang="en">Weak sentiment-return correlation turns out to be the interesting result — bot prevalence appears to suppress the organic sentiment signal in equity Twitter data.</p>
+          <p class="finding" data-lang="es" hidden>Una correlación débil entre sentimiento y rendimiento resulta ser el hallazgo más interesante — la prevalencia de bots parece suprimir la señal de sentimiento orgánico en los datos de Twitter sobre acciones.</p>
         </a>
         <div class="tags"><span>NLP</span><span>Granger Causality</span><span>Statsmodels</span></div>
       </div>
 
       <div class="card reveal">
-        <span class="industry">Supply Chain</span>
-        <h4>Rossmann Demand Forecasting</h4>
+        <span class="industry"><span data-lang="en">Supply Chain</span><span data-lang="es" hidden>Cadena de Suministro</span></span>
+        <h4><span data-lang="en">Rossmann Demand Forecasting</span><span data-lang="es" hidden>Pronóstico de Demanda para Rossmann</span></h4>
         <a class="card-photo" href="https://github.com/brianravelo28/rossmann-demand-forecasting" target="_blank" title="View code on GitHub">
           <img src="assets/photos/supply-chain.jpg" alt="" loading="lazy">
-          <p class="finding">ARIMA vs. LightGBM on retail demand — documenting where ARIMA's stationarity assumptions break on promotion- and holiday-driven sales data.</p>
+          <p class="finding" data-lang="en">ARIMA vs. LightGBM on retail demand — documenting where ARIMA's stationarity assumptions break on promotion- and holiday-driven sales data.</p>
+          <p class="finding" data-lang="es" hidden>ARIMA frente a LightGBM en la demanda minorista — documentando dónde fallan los supuestos de estacionariedad de ARIMA ante datos de ventas impulsados por promociones y días festivos.</p>
         </a>
         <div class="tags"><span>ARIMA</span><span>LightGBM</span><span>Tableau</span></div>
       </div>
 
       <div class="card reveal">
-        <span class="industry">Database / NLP</span>
-        <h4>SQL Analytics Engine with NLP Query Interface</h4>
+        <span class="industry"><span data-lang="en">Database / NLP</span><span data-lang="es" hidden>Bases de Datos / NLP</span></span>
+        <h4><span data-lang="en">SQL Analytics Engine with NLP Query Interface</span><span data-lang="es" hidden>Motor de Analítica SQL con Interfaz de Consultas en NLP</span></h4>
         <a class="card-photo" href="https://github.com/brianravelo28" target="_blank" title="View code on GitHub">
           <img src="assets/photos/database-nlp.jpg" alt="" loading="lazy">
-          <p class="finding">Text-to-SQL interface over a normalized analytical schema — plain-English questions translated to validated SQL via an LLM query layer.</p>
+          <p class="finding" data-lang="en">Text-to-SQL interface over a normalized analytical schema — plain-English questions translated to validated SQL via an LLM query layer.</p>
+          <p class="finding" data-lang="es" hidden>Interfaz de texto a SQL sobre un esquema analítico normalizado — preguntas en lenguaje natural traducidas a SQL validado mediante una capa de consultas basada en LLM.</p>
         </a>
         <div class="tags"><span>SQL</span><span>LangChain</span><span>Claude API</span></div>
       </div>
 
       <div class="card reveal">
-        <span class="industry">Real Estate</span>
-        <h4>Miami Property Price Estimator</h4>
+        <span class="industry"><span data-lang="en">Real Estate</span><span data-lang="es" hidden>Bienes Raíces</span></span>
+        <h4><span data-lang="en">Miami Property Price Estimator</span><span data-lang="es" hidden>Estimador de Precios de Propiedades en Miami</span></h4>
         <a class="card-photo" href="https://github.com/brianravelo28/miami-real-estate-ml" target="_blank" title="View code on GitHub">
           <img src="assets/photos/real-estate.jpg" alt="" loading="lazy">
-          <p class="finding">Geospatial price model where flood-zone risk and coastal proximity are first-class features — VE zones expected to show a premium despite highest risk.</p>
+          <p class="finding" data-lang="en">Geospatial price model where flood-zone risk and coastal proximity are first-class features — VE zones expected to show a premium despite highest risk.</p>
+          <p class="finding" data-lang="es" hidden>Modelo de precios geoespacial donde el riesgo de zona inundable y la proximidad costera son variables centrales — se espera que las zonas VE muestren una prima pese a tener el mayor riesgo.</p>
         </a>
         <div class="tags"><span>GeoPandas</span><span>LightGBM</span><span>SHAP</span><span>Plotly Dash</span></div>
       </div>
 
       <div class="card reveal">
-        <span class="industry">Tourism</span>
-        <h4>Hotel Review Sentiment & Reputation Dashboard</h4>
+        <span class="industry"><span data-lang="en">Tourism</span><span data-lang="es" hidden>Turismo</span></span>
+        <h4><span data-lang="en">Hotel Review Sentiment & Reputation Dashboard</span><span data-lang="es" hidden>Panel de Sentimiento y Reputación en Reseñas Hoteleras</span></h4>
         <a class="card-photo" href="https://github.com/brianravelo28/tourism-hotel-sentiment" target="_blank" title="View code on GitHub">
           <img src="assets/photos/tourism.jpg" alt="" loading="lazy">
-          <p class="finding">Multilingual (English + Spanish) sentiment and topic modeling across Miami/Orlando hotel reviews — reputation scoring and competitor benchmarking.</p>
+          <p class="finding" data-lang="en">Multilingual (English + Spanish) sentiment and topic modeling across Miami/Orlando hotel reviews — reputation scoring and competitor benchmarking.</p>
+          <p class="finding" data-lang="es" hidden>Modelado multilingüe (inglés y español) de sentimiento y temas en reseñas de hoteles de Miami/Orlando — puntuación de reputación y comparación con la competencia.</p>
         </a>
         <div class="tags"><span>BERTopic</span><span>XLM-RoBERTa</span></div>
       </div>
 
       <div class="card reveal">
-        <span class="industry">Agriculture</span>
-        <h4>Florida Crop Yield Forecasting</h4>
+        <span class="industry"><span data-lang="en">Agriculture</span><span data-lang="es" hidden>Agricultura</span></span>
+        <h4><span data-lang="en">Florida Crop Yield Forecasting</span><span data-lang="es" hidden>Pronóstico de Rendimiento de Cultivos en Florida</span></h4>
         <a class="card-photo" href="https://github.com/brianravelo28/florida-citrus-yield-forecast" target="_blank" title="View code on GitHub">
           <img src="assets/photos/agriculture.jpg" alt="" loading="lazy">
-          <p class="finding">Weather-driven yield forecasting for Florida citrus or strawberry — frost days and rainfall expected to dominate feature importance.</p>
+          <p class="finding" data-lang="en">Weather-driven yield forecasting for Florida citrus or strawberry — frost days and rainfall expected to dominate feature importance.</p>
+          <p class="finding" data-lang="es" hidden>Pronóstico de rendimiento de cultivos basado en clima para cítricos o fresas en Florida — se espera que los días de helada y la precipitación dominen la importancia de las variables.</p>
         </a>
         <div class="tags"><span>USDA NASS</span><span>NOAA</span><span>LightGBM</span></div>
       </div>
 
       <div class="card reveal">
-        <span class="industry">Insurance</span>
-        <h4>Florida Hurricane Claim Severity Predictor</h4>
+        <span class="industry"><span data-lang="en">Insurance</span><span data-lang="es" hidden>Seguros</span></span>
+        <h4><span data-lang="en">Florida Hurricane Claim Severity Predictor</span><span data-lang="es" hidden>Predictor de Severidad de Reclamos por Huracanes en Florida</span></h4>
         <a class="card-photo" href="https://github.com/brianravelo28" target="_blank" title="View code on GitHub">
           <img src="assets/photos/insurance.jpg" alt="" loading="lazy">
-          <p class="finding">Per-property Annual Expected Loss scoring from FEMA NFIP claims and NOAA storm tracks — Florida accounts for 79% of US homeowner insurance lawsuits.</p>
+          <p class="finding" data-lang="en">Per-property Annual Expected Loss scoring from FEMA NFIP claims and NOAA storm tracks — Florida accounts for 79% of US homeowner insurance lawsuits.</p>
+          <p class="finding" data-lang="es" hidden>Puntuación de Pérdida Anual Esperada por propiedad, a partir de reclamos del NFIP de FEMA y trayectorias de tormentas de la NOAA — Florida concentra el 79% de las demandas de seguros de vivienda en EE. UU.</p>
         </a>
         <div class="tags"><span>FastAPI</span><span>SHAP</span><span>GeoPandas</span></div>
       </div>
@@ -151,18 +195,27 @@
 
 <section id="moocs">
   <div class="wrap about-page-content">
-    <h2>MOOCs & Certifications</h2>
+    <h2><span data-lang="en">MOOCs & Certifications</span><span data-lang="es" hidden>Cursos y Certificaciones</span></h2>
     <ul class="item-list">
       <li>
-        <div class="item-title">Predictive Analytics Management — Tier 1</div>
+        <div class="item-title">
+          <span data-lang="en">Predictive Analytics Management — Tier 1</span>
+          <span data-lang="es" hidden>Gestión de Analítica Predictiva — Nivel 1</span>
+        </div>
         <div class="item-meta">SAS Institute</div>
       </li>
       <li>
-        <div class="item-title">Business Intelligence — Tier 2</div>
+        <div class="item-title">
+          <span data-lang="en">Business Intelligence — Tier 2</span>
+          <span data-lang="es" hidden>Inteligencia de Negocios — Nivel 2</span>
+        </div>
         <div class="item-meta">SAS Institute</div>
       </li>
       <li>
-        <div class="item-title">Applied Data Analytics — Tier 3</div>
+        <div class="item-title">
+          <span data-lang="en">Applied Data Analytics — Tier 3</span>
+          <span data-lang="es" hidden>Analítica de Datos Aplicada — Nivel 3</span>
+        </div>
         <div class="item-meta">SAS Institute</div>
       </li>
     </ul>
@@ -191,6 +244,7 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   });
 </script>
+<script src="assets/lang.js"></script>
 
 </body>
 </html>

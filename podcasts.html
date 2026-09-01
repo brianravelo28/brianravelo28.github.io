@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script src="assets/lang-early.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Podcasts — Brian Blitz</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-title-en="Podcasts — Brian Blitz" data-title-es="Podcasts — Brian Blitz">
 
 <nav class="site-nav">
   <div class="wrap">
     <span class="brand">Brian Blitz</span>
     <div class="tabs">
-      <a href="index.html">Start Here</a>
-      <a href="about.html">About</a>
-      <a href="books.html">Books</a>
-      <a href="podcasts.html" class="active">Podcasts</a>
-      <a href="articles.html">Articles</a>
-      <a href="assets/Blitz.Brian_Resume.pdf" target="_blank">Resume</a>
+      <a href="index.html"><span data-lang="en">Start Here</span><span data-lang="es" hidden>Inicio</span></a>
+      <a href="about.html"><span data-lang="en">About</span><span data-lang="es" hidden>Acerca de</span></a>
+      <a href="books.html"><span data-lang="en">Books</span><span data-lang="es" hidden>Libros</span></a>
+      <a href="podcasts.html" class="active"><span data-lang="en">Podcasts</span><span data-lang="es" hidden>Podcasts</span></a>
+      <a href="articles.html"><span data-lang="en">Articles</span><span data-lang="es" hidden>Artículos</span></a>
+      <a href="assets/Blitz.Brian_Resume.pdf" target="_blank"><span data-lang="en">Resume</span><span data-lang="es" hidden>Currículum</span></a>
+      <div class="lang-toggle">
+        <button type="button" data-set-lang="en" aria-label="English"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#B22234"/><rect y="1.08" width="20" height="1.08" fill="#fff"/><rect y="3.23" width="20" height="1.08" fill="#fff"/><rect y="5.38" width="20" height="1.08" fill="#fff"/><rect y="7.54" width="20" height="1.08" fill="#fff"/><rect y="9.69" width="20" height="1.08" fill="#fff"/><rect y="11.85" width="20" height="1.08" fill="#fff"/><rect width="8" height="7.54" fill="#3C3B6E"/></svg></button>
+        <button type="button" data-set-lang="es" aria-label="Español"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect y="3.5" width="20" height="7" fill="#F1BF00"/></svg></button>
+      </div>
     </div>
   </div>
 </nav>
@@ -25,14 +30,18 @@
 <header class="page-head">
   <div class="wrap">
     <h1>Podcasts</h1>
-    <p class="dek">What I've been listening to.</p>
+    <p class="dek">
+      <span data-lang="en">What I've been listening to.</span>
+      <span data-lang="es" hidden>Lo que he estado escuchando.</span>
+    </p>
   </div>
 </header>
 
 <section>
   <div class="wrap about-page-content">
     <div class="placeholder">
-      List is being compiled — check back soon.
+      <span data-lang="en">List is being compiled — check back soon.</span>
+      <span data-lang="es" hidden>La lista está en preparación — vuelve pronto.</span>
     </div>
 
     <!--
@@ -56,5 +65,6 @@
   </div>
 </footer>
 
+<script src="assets/lang.js"></script>
 </body>
 </html>

@@ -42,10 +42,37 @@ nav.site-nav .tabs {
   flex-wrap: wrap;
   font-size: 0.95rem;
 }
-nav.site-nav .tabs a { color: var(--text-muted); }
+nav.site-nav .tabs a { color: var(--text); }
 nav.site-nav .tabs a:hover,
 nav.site-nav .tabs a.active { color: var(--text); text-decoration: none; }
 nav.site-nav .tabs a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+.lang-toggle { display: flex; gap: 6px; margin-left: 6px; }
+.lang-toggle button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 36px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.lang-toggle button svg { display: block; border-radius: 2px; width: 22px; height: 15px; }
+.lang-toggle button:hover { opacity: 0.85; }
+.lang-toggle button.active { opacity: 1; border-color: var(--border); background: var(--accent-soft); }
+
+/* Bilingual content: [data-lang="es"] elements start hidden via the HTML `hidden`
+   attribute; these rules flip which language shows once <html data-lang> is set.
+   Explicit display values (not `revert`) so this doesn't depend on how a given
+   browser's UA stylesheet resolves `[hidden]` in the revert cascade. */
+html[data-lang="es"] [data-lang="en"] { display: none; }
+html[data-lang="es"] span[data-lang="es"][hidden] { display: inline; }
+html[data-lang="es"] p[data-lang="es"][hidden] { display: block; }
 
 /* Page header (used on inner pages instead of the big hero) */
 header.page-head {
