@@ -1,0 +1,165 @@
+:root {
+  --bg: #0f1419;
+  --bg-elev: #161c24;
+  --border: #262f3a;
+  --text: #e8edf2;
+  --text-muted: #9aa7b5;
+  --accent: #5b9dd9;
+  --accent-soft: rgba(91,157,217,0.12);
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+/* Site nav — present on every page */
+nav.site-nav {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+nav.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+nav.site-nav .brand {
+  font-weight: 600;
+  color: var(--text);
+}
+nav.site-nav .tabs {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+nav.site-nav .tabs a { color: var(--text-muted); }
+nav.site-nav .tabs a:hover,
+nav.site-nav .tabs a.active { color: var(--text); text-decoration: none; }
+nav.site-nav .tabs a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+/* Page header (used on inner pages instead of the big hero) */
+header.page-head {
+  padding: 56px 0 32px;
+  border-bottom: 1px solid var(--border);
+}
+header.page-head h1 { font-size: 2rem; margin: 0 0 10px; letter-spacing: -0.01em; }
+header.page-head .dek { color: var(--text-muted); font-size: 1.05rem; max-width: 640px; margin: 0; }
+
+/* Homepage hero */
+header.hero {
+  padding: 72px 0 48px;
+}
+.hero h1 { font-size: 2.4rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+.hero .role { color: var(--text-muted); font-size: 1.05rem; margin: 0 0 24px; }
+.hero .pitch {
+  font-size: 1.15rem;
+  max-width: 640px;
+  color: var(--text);
+  margin: 0 0 28px;
+}
+.links { display: flex; gap: 14px; flex-wrap: wrap; }
+.links a {
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+.links a:hover { border-color: var(--accent); text-decoration: none; background: var(--accent-soft); }
+
+/* Start Here quick-links */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 8px 0 0;
+}
+.quick-links a {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+.quick-links a:hover { border-color: var(--accent); background: var(--accent-soft); text-decoration: none; }
+.quick-links .qtitle { font-weight: 600; margin-bottom: 4px; }
+.quick-links .qdesc { color: var(--text-muted); font-size: 0.88rem; }
+
+section { padding: 48px 0; }
+section + section { border-top: 1px solid var(--border); }
+section h2 { font-size: 1.5rem; margin: 0 0 8px; }
+section h3 { font-size: 1.15rem; margin: 32px 0 12px; }
+section .section-sub {
+  color: var(--text-muted);
+  margin: 0 0 28px;
+  font-size: 0.98rem;
+}
+section p { color: var(--text-muted); }
+
+/* Project grid (About > Data Portfolio) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card .industry { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+.card h4 { margin: 0; font-size: 1.08rem; line-height: 1.35; color: var(--text); }
+.card .finding { color: var(--text-muted); font-size: 0.92rem; flex-grow: 1; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tags span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.card-links { display: flex; gap: 14px; margin-top: 4px; font-size: 0.88rem; }
+
+/* Simple list rows (MOOCs, and later Books/Podcasts/Articles) */
+.item-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.item-list li {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  background: var(--bg-elev);
+}
+.item-list .item-title { color: var(--text); font-weight: 600; font-size: 0.95rem; }
+.item-list .item-meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 2px; }
+
+/* Honest "not built yet" placeholder */
+.placeholder {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.about-page-content { max-width: 720px; }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0 60px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+footer .links a { color: var(--text-muted); }
