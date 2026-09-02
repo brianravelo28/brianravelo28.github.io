@@ -225,39 +225,42 @@ section p { color: var(--text-muted); }
 }
 .category-label:first-child { margin-top: 0; }
 
-/* Book covers — large, title-free; the blurb reveals on hover like the project cards */
-.book-grid {
+/* Cover grids (Books, Podcasts) — large, title-free art; the blurb reveals on
+   hover like the project cards. .ratio-2-3 for book covers, .ratio-1-1 for
+   square podcast artwork. */
+.cover-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
   gap: 20px;
 }
-.book-cover {
+.cover-item {
   position: relative;
   display: block;
-  aspect-ratio: 2 / 3;
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border);
   background: #fff;
   transition: border-color 0.2s ease;
 }
-.book-cover:hover,
-.book-cover:focus-visible { border-color: var(--accent); }
-.book-cover img {
+.cover-item.ratio-2-3 { aspect-ratio: 2 / 3; }
+.cover-item.ratio-1-1 { aspect-ratio: 1 / 1; }
+.cover-item:hover,
+.cover-item:focus-visible { border-color: var(--accent); }
+.cover-item img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
   background: #fff;
 }
-.book-cover .cover-quote {
+.cover-item .cover-quote {
   position: absolute;
   inset: 0;
   margin: 0;
   padding: 16px;
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(6,9,13,0.93), rgba(6,9,13,0.93));
+  background: #06090d;
   color: #f4f7fa;
   font-size: 0.84rem;
   font-style: italic;
@@ -266,11 +269,11 @@ section p { color: var(--text-muted); }
   overflow-y: auto;
   transition: opacity 0.25s ease;
 }
-.book-cover:hover .cover-quote,
-.book-cover:focus-visible .cover-quote { opacity: 1; }
+.cover-item:hover .cover-quote,
+.cover-item:focus-visible .cover-quote { opacity: 1; }
 /* The generic bilingual rule forces block display on shown <p> elements; restore
    flex here so the Spanish quote still vertically centers like the English one. */
-html[data-lang="es"] .book-cover p.cover-quote[data-lang="es"][hidden] { display: flex !important; }
+html[data-lang="es"] .cover-item p.cover-quote[data-lang="es"][hidden] { display: flex !important; }
 
 /* Honest "not built yet" placeholder */
 .placeholder {
