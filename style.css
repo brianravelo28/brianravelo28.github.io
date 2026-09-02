@@ -67,12 +67,16 @@ nav.site-nav .tabs a.active { border-bottom: 2px solid var(--accent); padding-bo
 .lang-toggle button.active { opacity: 1; border-color: var(--border); background: var(--accent-soft); }
 
 /* Bilingual content: [data-lang="es"] elements start hidden via the HTML `hidden`
-   attribute; these rules flip which language shows once <html data-lang> is set.
-   Explicit display values (not `revert`) so this doesn't depend on how a given
-   browser's UA stylesheet resolves `[hidden]` in the revert cascade. */
-html[data-lang="es"] [data-lang="en"] { display: none; }
-html[data-lang="es"] span[data-lang="es"][hidden] { display: inline; }
-html[data-lang="es"] p[data-lang="es"][hidden] { display: block; }
+   attribute. !important on both sides so this can't be silently overridden by a
+   more specific component rule (e.g. ".quick-links a { display: block }") in
+   either direction — neither "stay hidden by default" nor "show when active"
+   should depend on winning an ordinary specificity fight. */
+[data-lang="es"][hidden] { display: none !important; }
+html[data-lang="es"] [data-lang="en"] { display: none !important; }
+html[data-lang="es"] span[data-lang="es"][hidden] { display: inline !important; }
+html[data-lang="es"] p[data-lang="es"][hidden] { display: block !important; }
+html[data-lang="es"] a[data-lang="es"][hidden] { display: inline !important; }
+html[data-lang="es"] div[data-lang="es"][hidden] { display: block !important; }
 
 /* Page header (used on inner pages instead of the big hero) */
 header.page-head {
@@ -201,7 +205,25 @@ section p { color: var(--text-muted); }
   background: var(--bg-elev);
 }
 .item-list .item-title { color: var(--text); font-weight: 600; font-size: 0.95rem; }
+.item-list a.item-title:hover { text-decoration: underline; }
 .item-list .item-meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 2px; }
+.item-list .item-quote {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+}
+.category-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin: 28px 0 10px;
+}
+.category-label:first-child { margin-top: 0; }
 
 /* Honest "not built yet" placeholder */
 .placeholder {

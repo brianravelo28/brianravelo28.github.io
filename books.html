@@ -18,7 +18,8 @@
       <a href="books.html" class="active"><span data-lang="en">Books</span><span data-lang="es" hidden>Libros</span></a>
       <a href="podcasts.html"><span data-lang="en">Podcasts</span><span data-lang="es" hidden>Podcasts</span></a>
       <a href="articles.html"><span data-lang="en">Articles</span><span data-lang="es" hidden>Artículos</span></a>
-      <a href="assets/Blitz.Brian_Resume.pdf" target="_blank"><span data-lang="en">Resume</span><span data-lang="es" hidden>Currículum</span></a>
+      <a href="assets/Blitz.Brian_Resume.pdf" target="_blank" data-lang="en">Resume</a>
+      <a href="assets/Blitz.Brian_Resume_ES.pdf" target="_blank" data-lang="es" hidden>Currículum</a>
       <div class="lang-toggle">
         <button type="button" data-set-lang="en" aria-label="English"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#B22234"/><rect y="1.08" width="20" height="1.08" fill="#fff"/><rect y="3.23" width="20" height="1.08" fill="#fff"/><rect y="5.38" width="20" height="1.08" fill="#fff"/><rect y="7.54" width="20" height="1.08" fill="#fff"/><rect y="9.69" width="20" height="1.08" fill="#fff"/><rect y="11.85" width="20" height="1.08" fill="#fff"/><rect width="8" height="7.54" fill="#3C3B6E"/></svg></button>
         <button type="button" data-set-lang="es" aria-label="Español"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect y="3.5" width="20" height="7" fill="#F1BF00"/></svg></button>
@@ -39,20 +40,77 @@
 
 <section>
   <div class="wrap about-page-content">
-    <div class="placeholder">
-      <span data-lang="en">List is being compiled — check back soon.</span>
-      <span data-lang="es" hidden>La lista está en preparación — vuelve pronto.</span>
-    </div>
 
-    <!--
-      Once ready, replace the placeholder above with:
-      <ul class="item-list">
-        <li>
-          <div class="item-title">Book Title</div>
-          <div class="item-meta">Author · one line on why it mattered</div>
-        </li>
-      </ul>
-    -->
+    <div class="category-label">R</div>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">R for Data Science — Wickham, Çetinkaya-Rundel, Grolemund</div>
+        <div class="item-quote" data-lang="en">This is where my deeper reading in R really started — less about syntax, more about learning to think in the tidyverse: import, tidy, transform, visualize, model.</div>
+        <div class="item-quote" data-lang="es" hidden>Aquí es donde realmente comenzó mi lectura más profunda sobre R — menos sobre sintaxis, más sobre aprender a pensar en el tidyverse: importar, limpiar, transformar, visualizar, modelar.</div>
+      </li>
+      <li>
+        <div class="item-title">Advanced R — Hadley Wickham</div>
+        <div class="item-quote" data-lang="en">Wickham again, and it shows. A step up from the basics — into how R actually works under the hood, not just how to use it.</div>
+        <div class="item-quote" data-lang="es" hidden>Wickham otra vez, y se nota. Un paso más allá de lo básico — hacia cómo funciona R realmente por dentro, no solo cómo usarlo.</div>
+      </li>
+      <li>
+        <div class="item-title">Deep R Programming — Marek Gagolewski</div>
+        <div class="item-quote" data-lang="en">A more rigorous, textbook-style walkthrough of R fundamentals. Good for filling gaps the tidyverse-focused books tend to skip.</div>
+        <div class="item-quote" data-lang="es" hidden>Un recorrido más riguroso y de estilo académico por los fundamentos de R. Útil para llenar los vacíos que los libros centrados en el tidyverse suelen dejar.</div>
+      </li>
+    </ul>
+
+    <div class="category-label">Python</div>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">Python for Everybody — Charles R. Severance</div>
+        <div class="item-quote" data-lang="en">My starting point for Python, and still a book I'd hand to anyone new to programming. Patient, practical, no wasted motion.</div>
+        <div class="item-quote" data-lang="es" hidden>Mi punto de partida con Python, y sigue siendo un libro que le daría a cualquiera que empiece a programar. Paciente, práctico, sin rodeos.</div>
+      </li>
+      <li>
+        <div class="item-title">Geographic Data Science with Python — Rey, Arribas-Bel, Wolf</div>
+        <div class="item-quote" data-lang="en">I relied on this heavily building the geospatial features for my real estate pricing project — comprehensive enough that it taught me the concepts, not just the code.</div>
+        <div class="item-quote" data-lang="es" hidden>Me apoyé mucho en este libro para construir las variables geoespaciales de mi proyecto de precios inmobiliarios — lo suficientemente completo como para enseñarme los conceptos, no solo el código.</div>
+      </li>
+      <li>
+        <div class="item-title">How to Think Like a Computer Scientist: Learning with Python 3 — Wentworth, Elkner, Downey, Meyers</div>
+        <div class="item-quote" data-lang="en">Less about Python specifically, more about learning to think like a programmer. Helped fundamentals click in a way pure syntax tutorials didn't.</div>
+        <div class="item-quote" data-lang="es" hidden>Menos sobre Python en sí, más sobre aprender a pensar como programador. Ayudó a que los fundamentos encajaran de una forma que los tutoriales de pura sintaxis no lograban.</div>
+      </li>
+    </ul>
+
+    <div class="category-label"><span data-lang="en">Databases</span><span data-lang="es" hidden>Bases de Datos</span></div>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">PostgreSQL Official Documentation</div>
+        <div class="item-quote" data-lang="en">Comprehensive enough that it ended up teaching me more than just Postgres — the concepts translated well, and it gave me the confidence to pick up other database languages with a lot less friction.</div>
+        <div class="item-quote" data-lang="es" hidden>Tan completa que terminó enseñándome más que solo Postgres — los conceptos se trasladaron bien, y me dio la confianza para aprender otros lenguajes de bases de datos con mucha menos fricción.</div>
+      </li>
+    </ul>
+
+    <div class="category-label">SAS</div>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">Predictive Modeling with SAS Enterprise Miner, 3rd Ed. — Kattamuri S. Sarma, PhD</div>
+        <div class="item-quote" data-lang="en">Ties directly back to my SAS certifications — a practical, business-first approach to predictive modeling rather than a purely theoretical one.</div>
+        <div class="item-quote" data-lang="es" hidden>Se conecta directamente con mis certificaciones de SAS — un enfoque práctico y orientado al negocio para el modelado predictivo, en lugar de uno puramente teórico.</div>
+      </li>
+      <li>
+        <div class="item-title">A Gentle Introduction to Statistics Using SAS Studio — Ron Cody, EdD</div>
+        <div class="item-quote" data-lang="en">A low-math, point-and-click way into core statistical concepts. Good for building intuition before wrestling with the harder math.</div>
+        <div class="item-quote" data-lang="es" hidden>Una forma accesible y con poca matemática de acercarse a los conceptos estadísticos centrales, mediante point-and-click. Útil para construir intuición antes de enfrentarse a las matemáticas más difíciles.</div>
+      </li>
+    </ul>
+
+    <div class="category-label"><span data-lang="en">Career / Programming</span><span data-lang="es" hidden>Carrera / Programación</span></div>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">The Self-Taught Programmer — Cory Althoff</div>
+        <div class="item-quote" data-lang="en">A useful gut-check for anyone building a technical career outside the traditional CS-degree path — the stuff bootcamps and textbooks don't usually cover.</div>
+        <div class="item-quote" data-lang="es" hidden>Una verificación de realidad útil para cualquiera que construya una carrera técnica fuera del camino tradicional de una carrera en informática — lo que los bootcamps y los libros de texto normalmente no cubren.</div>
+      </li>
+    </ul>
+
   </div>
 </section>
 
