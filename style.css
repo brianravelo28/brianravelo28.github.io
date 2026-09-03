@@ -225,6 +225,29 @@ section p { color: var(--text-muted); }
 }
 .category-label:first-child { margin-top: 0; }
 
+/* Creator headers (Articles page) — larger name + their own Medium profile
+   photo, for the followed creators specifically (not "My Writing" or
+   "Recommended Reading", which stay plain .category-label text). */
+.creator-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0 14px;
+}
+.creator-label:first-child { margin-top: 0; }
+.creator-label img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+.creator-label .creator-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
 /* Article cards — preview-thumbnail images pulled from each post; unlike the
    book/podcast covers, the title isn't printed on the art, so it stays visible. */
 .article-grid {
