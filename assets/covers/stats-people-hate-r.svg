@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <rect width="400" height="600" fill="#161c24"/>
+  <rect x="1" y="1" width="398" height="598" fill="none" stroke="#262f3a" stroke-width="2"/>
+  <rect x="24" y="24" width="352" height="552" fill="none" stroke="#5b9dd9" stroke-width="1.5"/>
+  <text x="200" y="250" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#e8edf2" text-anchor="middle">
+    <tspan x="200" dy="0">Statistics for</tspan>
+    <tspan x="200" dy="42">People Who</tspan>
+    <tspan x="200" dy="42" font-size="24" fill="#9aa7b5">(Think They)</tspan>
+    <tspan x="200" dy="42">Hate Statistics</tspan>
+    <tspan x="200" dy="42">Using R</tspan>
+  </text>
+  <text x="200" y="500" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#5b9dd9" text-anchor="middle">Salkind &amp; Shaw</text>
+</svg>
