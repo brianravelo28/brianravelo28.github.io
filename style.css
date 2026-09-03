@@ -281,7 +281,14 @@ section p { color: var(--text-muted); }
 .article-card:hover .article-title { text-decoration: underline; }
 /* Per-image contrast, picked from each photo's own brightness where the title sits. */
 .article-card.is-dark .article-title { color: #ffffff; text-shadow: 0 1px 4px rgba(0,0,0,0.75), 0 0 2px rgba(0,0,0,0.6); }
-.article-card.is-light .article-title { color: #14181f; font-weight: 800; text-shadow: 0 1px 4px rgba(255,255,255,0.85), 0 0 3px rgba(255,255,255,0.7); }
+.article-card.is-light .article-title {
+  color: #14181f;
+  font-weight: 800;
+  -webkit-text-stroke: 0.6px #ffffff;
+  text-shadow:
+    -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff,
+    0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff, 1px 0 0 #fff;
+}
 .article-card .article-meta { color: var(--text-muted); font-size: 0.8rem; padding: 8px 14px 12px; }
 
 /* Cover grids (Books, Podcasts) — large, title-free art; the blurb reveals on
