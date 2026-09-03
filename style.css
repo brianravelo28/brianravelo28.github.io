@@ -242,11 +242,24 @@ section p { color: var(--text-muted); }
 }
 .article-card:hover,
 .article-card:focus-visible { border-color: var(--accent); }
+.article-media { position: relative; }
 .article-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-.article-card .article-body { padding: 12px 14px 14px; }
-.article-card .article-title { color: var(--text); font-weight: 600; font-size: 0.92rem; line-height: 1.35; }
+.article-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
 .article-card:hover .article-title { text-decoration: underline; }
-.article-card .article-meta { color: var(--text-muted); font-size: 0.8rem; margin-top: 6px; }
+/* Per-image contrast, picked from each photo's own brightness where the title sits. */
+.article-card.is-dark .article-title { color: #ffffff; text-shadow: 0 1px 4px rgba(0,0,0,0.75), 0 0 2px rgba(0,0,0,0.6); }
+.article-card.is-light .article-title { color: #14181f; text-shadow: 0 1px 4px rgba(255,255,255,0.75), 0 0 2px rgba(255,255,255,0.6); }
+.article-card .article-meta { color: var(--text-muted); font-size: 0.8rem; padding: 8px 14px 12px; }
 
 /* Cover grids (Books, Podcasts) — large, title-free art; the blurb reveals on
    hover like the project cards. .ratio-2-3 for book covers, .ratio-1-1 for
