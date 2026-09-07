@@ -1,11 +1,13 @@
 :root {
-  --bg: #0f1419;
-  --bg-elev: #161c24;
-  --border: #262f3a;
-  --text: #e8edf2;
-  --text-muted: #9aa7b5;
-  --accent: #5b9dd9;
-  --accent-soft: rgba(91,157,217,0.12);
+  --bg: #ffffff;
+  --bg-elev: #f5f8fc;
+  --border: #dde4ed;
+  --text: #16202e;
+  --text-muted: #5c6b7d;
+  --accent: #4f9fe8;
+  --accent-soft: rgba(79,159,232,0.10);
+  --accent2: #fb6b21;
+  --accent2-soft: rgba(251,107,33,0.10);
   --radius: 10px;
 }
 * { box-sizing: border-box; }
@@ -18,12 +20,13 @@ body {
 }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
 /* Site nav — present on every page */
 nav.site-nav {
   border-bottom: 1px solid var(--border);
   padding: 20px 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 nav.site-nav .wrap {
   display: flex;
@@ -34,26 +37,67 @@ nav.site-nav .wrap {
 }
 nav.site-nav .brand {
   font-weight: 600;
+  font-size: 20pt;
   color: var(--text);
 }
 nav.site-nav .tabs {
   display: flex;
+  align-items: center;
   gap: 22px;
   flex-wrap: wrap;
-  font-size: 0.95rem;
+  font-size: 13pt;
 }
 nav.site-nav .tabs a { color: var(--text); }
 nav.site-nav .tabs a:hover,
 nav.site-nav .tabs a.active { color: var(--text); text-decoration: none; }
 nav.site-nav .tabs a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
 
+/* About dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0;
+  padding: 10px 6px 6px;
+  background: rgba(16,20,28,0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius);
+  display: none;
+  flex-direction: column;
+  min-width: 190px;
+  z-index: 30;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu { display: flex; }
+.nav-dropdown-menu a {
+  padding: 9px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.92rem;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+.nav-dropdown-menu a:hover { background: rgba(255,255,255,0.18); text-decoration: none; }
+
+/* Resume tab — pill border to set it apart from the rest of the nav */
+.resume-pill {
+  border: 1.5px solid var(--accent2);
+  border-radius: 999px;
+  padding: 5px 14px !important;
+}
+.resume-pill:hover { background: var(--accent2-soft); text-decoration: none !important; }
+
 .lang-toggle { display: flex; gap: 6px; margin-left: 6px; }
 .lang-toggle button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 40px;
-  min-height: 36px;
+  min-width: 46px;
+  min-height: 40px;
   background: none;
   border: 1px solid transparent;
   border-radius: 6px;
@@ -62,7 +106,7 @@ nav.site-nav .tabs a.active { border-bottom: 2px solid var(--accent); padding-bo
   opacity: 0.5;
   transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
-.lang-toggle button svg { display: block; border-radius: 2px; width: 22px; height: 15px; }
+.lang-toggle button svg { display: block; border-radius: 2px; width: 30px; height: 20px; }
 .lang-toggle button:hover { opacity: 0.85; }
 .lang-toggle button.active { opacity: 1; border-color: var(--border); background: var(--accent-soft); }
 
@@ -77,6 +121,7 @@ html[data-lang="es"] span[data-lang="es"][hidden] { display: inline !important; 
 html[data-lang="es"] p[data-lang="es"][hidden] { display: block !important; }
 html[data-lang="es"] a[data-lang="es"][hidden] { display: inline !important; }
 html[data-lang="es"] div[data-lang="es"][hidden] { display: block !important; }
+html[data-lang="es"] ul[data-lang="es"][hidden] { display: block !important; }
 
 /* Page header (used on inner pages instead of the big hero) */
 header.page-head {
@@ -86,18 +131,162 @@ header.page-head {
 header.page-head h1 { font-size: 2rem; margin: 0 0 10px; letter-spacing: -0.01em; }
 header.page-head .dek { color: var(--text-muted); font-size: 1.05rem; max-width: 640px; margin: 0; }
 
-/* Homepage hero */
-header.hero {
-  padding: 72px 0 48px;
+/* Individual photographic banner per inner page — jameskle.com-style */
+header.page-head.has-photo {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 52vh;
+  padding: 150px 0 80px;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: none;
 }
-.hero h1 { font-size: 2.4rem; margin: 0 0 6px; letter-spacing: -0.01em; }
-.hero .role { color: var(--text-muted); font-size: 1.05rem; margin: 0 0 24px; }
+header.page-head.has-photo > .wrap { width: 100%; }
+header.page-head.has-photo .page-head-bg { position: absolute; inset: 0; z-index: -1; }
+header.page-head.has-photo .page-head-bg img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+header.page-head.has-photo .page-head-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12,16,24,0.35) 0%, rgba(12,16,24,0.72) 70%, rgba(12,16,24,0.92) 100%);
+}
+header.page-head.has-photo h1 { color: #fff; }
+header.page-head.has-photo .dek { color: rgba(255,255,255,0.9); }
+
+/* Inner pages: nav nested inside the banner photo, same treatment as the
+   homepage hero — transparent background, white text, sits above the bg
+   image and the gradient scrim. */
+header.page-head.has-photo nav.site-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: transparent;
+  border-bottom: none;
+  padding: 26px 0;
+}
+header.page-head.has-photo nav.site-nav .brand,
+header.page-head.has-photo nav.site-nav .tabs a {
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.85);
+}
+header.page-head.has-photo nav.site-nav .tabs a:hover,
+header.page-head.has-photo nav.site-nav .tabs a.active { color: #fff; }
+header.page-head.has-photo nav.site-nav .tabs a.active { border-bottom-color: #fff; }
+header.page-head.has-photo nav.site-nav .lang-toggle button.active { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.16); }
+header.page-head.has-photo nav.site-nav .resume-pill { border-color: rgba(255,255,255,0.75); }
+header.page-head.has-photo nav.site-nav .resume-pill:hover { background: rgba(255,255,255,0.14); border-color: #fff; }
+
+/* Per-banner focal point overrides where the default center-30% crop misses the subject */
+body[data-title-en^="Work Experience"] .page-head-bg img { object-position: center 50% !important; }
+
+/* Homepage hero — large photographic banner, sized to almost fill the
+   viewport on load. The source photo is portrait, so showing it whole at
+   full width inside this landscape-ish box would either crop it or leave
+   empty space; instead the sharp photo sits centered/uncropped (contain)
+   over a blurred, scaled-up copy of itself that fills the rest of the box
+   edge to edge — no flat letterbox bars, no cropping. */
+header.hero {
+  position: relative;
+  width: 100%;
+  height: min(92vh, 75vw);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* On the hero, the nav is nested inside the photo (not a separate bar above
+   it) — transparent background, white text, sits above both the bg image
+   and the hero-content overlay. */
+header.hero nav.site-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: transparent;
+  border-bottom: none;
+  padding: 26px 0;
+}
+header.hero nav.site-nav .brand,
+header.hero nav.site-nav .tabs a {
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.85);
+}
+header.hero nav.site-nav .tabs a:hover,
+header.hero nav.site-nav .tabs a.active { color: #fff; }
+header.hero nav.site-nav .tabs a.active { border-bottom-color: #fff; }
+header.hero nav.site-nav .lang-toggle button.active { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.16); }
+header.hero nav.site-nav .resume-pill { border-color: rgba(255,255,255,0.75); }
+header.hero nav.site-nav .resume-pill:hover { background: rgba(255,255,255,0.14); border-color: #fff; }
+/* The big "Brian Blitz" h1 right below makes the nav brand redundant here —
+   hidden but still occupying its layout slot, so the nav lines up exactly
+   like every other page instead of the tabs shifting to fill the gap. */
+header.hero nav.site-nav .brand { visibility: hidden; }
+
+.hero-bg { position: absolute; inset: 0; margin: 0; padding: 0; border: 0; z-index: -1; overflow: hidden; }
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  background: url('assets/banners/start-here-hero.jpg') center / cover no-repeat;
+  filter: blur(35px) brightness(0.55);
+  transform: scale(1.1);
+  z-index: 0;
+}
+.hero-bg img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; margin: 0; padding: 0; border: 0; }
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(12,16,24,0.08) 0%, rgba(12,16,24,0.12) 55%, rgba(12,16,24,0.28) 100%);
+}
+header.hero .hero-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  padding: 0;
+  z-index: 1;
+}
+/* Pushed flush left (not the sitewide centered/capped .wrap) so the long
+   tagline line has maximum room before it reaches the photo. */
+header.hero .hero-content .wrap { max-width: none; margin: 0; padding: 0 24px; }
+header.hero h1 {
+  font-size: 3.2rem;
+  margin: 0 0 22px;
+  max-width: 380px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.75), 0 1px 3px rgba(0,0,0,0.9);
+}
+.hero .taglines { margin: 0 0 30px; }
+.hero .taglines p { max-width: 380px; }
+/* This line stays on one line and is allowed to run past the 380px column
+   on purpose — it ends with "Data Analytics" leaking onto the photo,
+   landing just above the shoulder. */
+.hero .taglines p.tagline-leak { max-width: none; white-space: nowrap; }
+.hero .taglines p {
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0 0 14px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.9);
+}
+.hero .role { color: rgba(255,255,255,0.88); font-size: 1.1rem; margin: 0 0 24px; }
 .hero .pitch {
   font-size: 1.15rem;
   max-width: 640px;
-  color: var(--text);
+  color: #fff;
   margin: 0 0 28px;
 }
+header.hero .links a { border-color: rgba(255,255,255,0.4); color: #fff; }
+header.hero .links a:hover { border-color: var(--accent2); background: rgba(255,255,255,0.14); }
 .links { display: flex; gap: 14px; flex-wrap: wrap; }
 .links a {
   padding: 9px 16px;
@@ -126,6 +315,36 @@ header.hero {
 .quick-links .qtitle { font-weight: 600; margin-bottom: 4px; }
 .quick-links .qdesc { color: var(--text-muted); font-size: 0.88rem; }
 
+/* Wider minimum than the base .quick-links grid: at 220px, a wide viewport
+   packs in enough columns that each card gets NARROWER than a card on a
+   narrower/"minimized" window would — the opposite of what you'd expect.
+   260px keeps the column count (and per-card width) stable across normal
+   desktop widths so the one-line description doesn't wrap unpredictably. */
+.quick-links-photo { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.quick-links-photo a { padding: 0 0 16px; overflow: hidden; }
+.quick-links-photo .qphoto {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 12px;
+  background: var(--bg-elev);
+}
+.quick-links-photo .qphoto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.quick-links-photo .qtitle,
+.quick-links-photo .qdesc {
+  padding: 0 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.quick-links-photo .qdesc { padding-bottom: 2px; }
+
+/* Cover-art crops: default center-crop hides the title on these two, so
+   pull the visible window down/up to keep it fully in frame. */
+.quick-links-photo img[src*="r-for-data-science"] { object-position: center 30%; }
+/* Zoomed out (contain, not cover) so the whole square cover shows — face
+   included — rather than cropping to just the title band. */
+.quick-links-photo img[src*="datacast"] { object-fit: contain; object-position: center; }
+
 section { padding: 48px 0; }
 section + section { border-top: 1px solid var(--border); }
 section h2 { font-size: 1.5rem; margin: 0 0 8px; }
@@ -136,6 +355,12 @@ section .section-sub {
   font-size: 0.98rem;
 }
 section p { color: var(--text-muted); }
+.about-page-content ul:not(.item-list) {
+  color: var(--text-muted);
+  padding-left: 20px;
+  margin: 0 0 20px;
+}
+.about-page-content ul:not(.item-list) li { margin-bottom: 6px; line-height: 1.55; }
 
 /* Project grid (About > Data Portfolio) */
 .grid {
@@ -351,6 +576,7 @@ html[data-lang="es"] .cover-item p.cover-quote[data-lang="es"][hidden] { display
 }
 
 .about-page-content { max-width: 720px; }
+.inline-doc-icon { vertical-align: -2px; margin-left: 2px; color: var(--text-muted); }
 
 /* Scroll reveal — cards fade/slide in as they enter the viewport */
 .reveal {
@@ -369,4 +595,5 @@ footer {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+footer .links { justify-content: center; align-items: center; flex-wrap: nowrap; }
 footer .links a { color: var(--text-muted); }

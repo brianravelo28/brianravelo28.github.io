@@ -5,54 +5,167 @@
 <script src="assets/lang-early.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brian Blitz</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body data-title-en="Brian Blitz" data-title-es="Brian Blitz">
 
-<nav class="site-nav">
-  <div class="wrap">
-    <a class="brand" href="index.html">Brian Blitz</a>
-    <div class="tabs">
-      <a href="index.html" class="active"><span data-lang="en">Start Here</span><span data-lang="es" hidden>Inicio</span></a>
-      <a href="about.html"><span data-lang="en">About</span><span data-lang="es" hidden>Acerca de</span></a>
-      <a href="books.html"><span data-lang="en">Books</span><span data-lang="es" hidden>Libros</span></a>
-      <a href="podcasts.html"><span data-lang="en">Podcasts</span><span data-lang="es" hidden>Podcasts</span></a>
-      <a href="articles.html"><span data-lang="en">Articles</span><span data-lang="es" hidden>Artículos</span></a>
-      <a href="coding-portfolio.html"><span data-lang="en">Coding Portfolio</span><span data-lang="es" hidden>Portafolio de Código</span></a>
-      <a href="assets/Blitz.Brian_Resume.pdf" target="_blank" data-lang="en">Resume</a>
-      <a href="assets/Blitz.Brian_Resume_ES.pdf" target="_blank" data-lang="es" hidden>Currículum</a>
-      <div class="lang-toggle">
-        <button type="button" data-set-lang="en" aria-label="English"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#B22234"/><rect y="1.08" width="20" height="1.08" fill="#fff"/><rect y="3.23" width="20" height="1.08" fill="#fff"/><rect y="5.38" width="20" height="1.08" fill="#fff"/><rect y="7.54" width="20" height="1.08" fill="#fff"/><rect y="9.69" width="20" height="1.08" fill="#fff"/><rect y="11.85" width="20" height="1.08" fill="#fff"/><rect width="8" height="7.54" fill="#3C3B6E"/></svg></button>
-        <button type="button" data-set-lang="es" aria-label="Español"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect y="3.5" width="20" height="7" fill="#F1BF00"/></svg></button>
+<header class="hero">
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-hidden="true" tabindex="-1">Brian Blitz</a>
+      <div class="tabs">
+        <a href="index.html" class="active"><span data-lang="en">Start Here</span><span data-lang="es" hidden>Inicio</span></a>
+        <div class="nav-dropdown">
+          <a href="work-experience.html"><span data-lang="en">About</span><span data-lang="es" hidden>Acerca de</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="work-experience.html"><span data-lang="en">Work Experience</span><span data-lang="es" hidden>Experiencia Laboral</span></a>
+            <a href="data-portfolio.html"><span data-lang="en">Data Portfolio</span><span data-lang="es" hidden>Portafolio de Datos</span></a>
+            <a href="coding-portfolio.html"><span data-lang="en">Coding Portfolio</span><span data-lang="es" hidden>Portafolio de Código</span></a>
+            <a href="moocs.html"><span data-lang="en">MOOCs</span><span data-lang="es" hidden>Cursos</span></a>
+          </div>
+        </div>
+        <a href="books.html"><span data-lang="en">Books</span><span data-lang="es" hidden>Libros</span></a>
+        <a href="podcasts.html"><span data-lang="en">Podcasts</span><span data-lang="es" hidden>Podcasts</span></a>
+        <a href="articles.html"><span data-lang="en">Articles</span><span data-lang="es" hidden>Artículos</span></a>
+        <a class="resume-pill" href="assets/Blitz.Brian_Resume.pdf" target="_blank" data-lang="en">Resume</a>
+        <a class="resume-pill" href="assets/Blitz.Brian_Resume_ES.pdf" target="_blank" data-lang="es" hidden>Currículum</a>
+        <div class="lang-toggle">
+          <button type="button" data-set-lang="en" aria-label="English"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#B22234"/><rect y="1.08" width="20" height="1.08" fill="#fff"/><rect y="3.23" width="20" height="1.08" fill="#fff"/><rect y="5.38" width="20" height="1.08" fill="#fff"/><rect y="7.54" width="20" height="1.08" fill="#fff"/><rect y="9.69" width="20" height="1.08" fill="#fff"/><rect y="11.85" width="20" height="1.08" fill="#fff"/><rect width="8" height="7.54" fill="#3C3B6E"/></svg></button>
+          <button type="button" data-set-lang="es" aria-label="Español"><svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect y="3.5" width="20" height="7" fill="#F1BF00"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="hero-bg"><img src="assets/banners/start-here-hero.jpg" alt=""></div>
+  <div class="hero-content">
+    <div class="wrap">
+      <h1>Brian Blitz</h1>
+      <div class="taglines" data-lang="en">
+        <p class="tagline-leak">Small Business → Case Work → Teaching Abroad → Data Analytics</p>
+        <p>Equity Trader + HR Analyst + ML Builder</p>
+        <p>Data ↔ Domain Context ↔ Real-World Stakes</p>
+        <p>Bilingual Data Analyst · Las Vegas, NV</p>
+      </div>
+      <div class="taglines" data-lang="es" hidden>
+        <p class="tagline-leak">Pequeño Negocio → Trabajo Social → Enseñanza en el Extranjero → Analítica de Datos</p>
+        <p>Trader de Apuestas + Analista de RR. HH. + Constructor de ML</p>
+        <p>Datos ↔ Contexto del Dominio ↔ Consecuencias Reales</p>
+        <p>Analista de Datos Bilingüe · Las Vegas, NV</p>
       </div>
     </div>
   </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <h1>Brian Blitz</h1>
-    <p class="role"><span data-lang="en">Data Analyst · Las Vegas, NV</span><span data-lang="es" hidden>Analista de Datos · Las Vegas, NV</span></p>
-    <p class="pitch" data-lang="en">
-      I build interpretable, deployable ML systems for high-stakes industries. I've spent my career in
-      environments where analytical errors have real consequences — a restaurant lives or dies on margins,
-      an NGO allocates scarce resources under legal constraints, a sportsbook loses money to customers who
-      are smarter than the line. That domain grounding distinguishes this work from candidates who have
-      credentials but not context.
-    </p>
-    <p class="pitch" data-lang="es" hidden>
-      Diseño sistemas de machine learning interpretables y listos para producción en industrias de alto
-      riesgo. He pasado mi carrera en entornos donde los errores analíticos tienen consecuencias reales —
-      un restaurante vive o muere por sus márgenes, una ONG asigna recursos escasos bajo restricciones
-      legales, una casa de apuestas pierde dinero frente a clientes más astutos que la línea. Ese
-      conocimiento del terreno distingue este trabajo de candidatos que tienen credenciales pero no contexto.
-    </p>
-    <div class="links">
-      <a href="https://github.com/brianravelo28" target="_blank">GitHub</a>
-      <a href="mailto:brian.blitz28@gmail.com"><span data-lang="en">Email</span><span data-lang="es" hidden>Correo</span></a>
-    </div>
-  </div>
 </header>
+
+<section id="work">
+  <div class="wrap about-page-content">
+    <h2><span data-lang="en">Work</span><span data-lang="es" hidden>Trabajo</span></h2>
+    <p data-lang="en">
+      I'm currently an Equity Trader at William Hill / Caesars Sportsbook in Las Vegas, where I've spent the
+      last two years building the data infrastructure behind pricing decisions — performance monitoring
+      systems in Excel, Python, R, and Power BI that track KPIs across NBA, NFL, and NCAAF markets, and a
+      comparative research pipeline that checks our lines against projections from top predictive thinktanks.
+      That pipeline alone moved annual metrics 1–3% across three markets.
+    </p>
+    <p data-lang="es" hidden>
+      Actualmente soy Trader de Apuestas en William Hill / Caesars Sportsbook en Las Vegas, donde he pasado los
+      últimos dos años construyendo la infraestructura de datos detrás de las decisiones de fijación de precios
+      — sistemas de monitoreo de rendimiento en Excel, Python, R y Power BI que hacen seguimiento de KPIs en los
+      mercados de la NBA, la NFL y la NCAAF, y un pipeline de investigación comparativa que verifica nuestras
+      líneas frente a proyecciones de los principales centros de análisis predictivo. Solo ese pipeline movió
+      las métricas anuales entre un 1–3% en tres mercados.
+    </p>
+    <p data-lang="en">
+      Before this, I was an HR Data Analyst at Nance Staffing, where I taught myself to think like an engineer
+      as much as an analyst — writing Python scripts to automate quality control on 10,000+ monthly applicants,
+      and designing the MySQL database architecture that made structured reporting possible in the first place.
+      Before that database existed, this analysis didn't either.
+    </p>
+    <p data-lang="es" hidden>
+      Antes de esto, fui Analista de Datos de RR. HH. en Nance Staffing, donde aprendí por mi cuenta a pensar
+      tanto como ingeniero como analista — escribiendo scripts en Python para automatizar el control de calidad
+      de más de 10,000 postulantes mensuales, y diseñando la arquitectura de base de datos en MySQL que hizo
+      posible, en primer lugar, la generación de reportes estructurados. Antes de que existiera esa base de
+      datos, tampoco existía este análisis.
+    </p>
+    <p data-lang="en">
+      None of this started with data, though. I studied Anthropology at UNC Greensboro, ran a small café in
+      Greensboro for two years, then spent five years abroad in South Korea teaching English — first at
+      Reading Town, then as Head Teacher at Lingua Academy. In between, I worked as a Case Aide at World
+      Relief, helping resettled refugee families navigate the practical machinery of starting over: paperwork,
+      appointments, service coordination, the day-to-day logistics of building a life in a new country. It's
+      not the usual path into data analytics, but each step left something behind. Anthropology trained me to
+      look for the pattern behind the behavior, not just the behavior itself. Teaching forced me to take
+      something complex and make it click for someone starting from zero — the same skill that goes into
+      explaining a model to a stakeholder who doesn't care how it works, only what it means. And case work
+      meant every data point I touched was a person, not a row — a habit I haven't shaken since.
+    </p>
+    <p data-lang="es" hidden>
+      Sin embargo, nada de esto empezó con datos. Estudié Antropología en UNC Greensboro, dirigí un pequeño
+      café en Greensboro durante dos años, y luego pasé cinco años en Corea del Sur enseñando inglés — primero
+      en Reading Town, y después como Profesor Principal en Lingua Academy. En medio de todo eso, trabajé como
+      Asistente de Casos en World Relief, ayudando a familias de refugiados reasentados a navegar la
+      maquinaria práctica de empezar de nuevo: papeleo, citas, coordinación de servicios, la logística diaria
+      de construir una vida en un país nuevo. No es el camino habitual hacia la analítica de datos, pero cada
+      etapa dejó algo. La antropología me entrenó para buscar el patrón detrás del comportamiento, no solo el
+      comportamiento en sí. Enseñar me obligó a tomar algo complejo y hacer que le hiciera clic a alguien que
+      empezaba desde cero — la misma habilidad que se necesita para explicarle un modelo a alguien del negocio
+      a quien no le importa cómo funciona, solo qué significa. Y el trabajo de casos significó que cada dato
+      que toqué era una persona, no una fila — un hábito del que no me he desprendido desde entonces.
+    </p>
+    <p>
+      <span data-lang="en">Full work history, education, and skills: <a href="assets/Blitz.Brian_Resume.pdf" target="_blank">Resume (PDF)</a> <svg class="inline-doc-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+      <span data-lang="es" hidden>Historial laboral completo, formación académica y habilidades: <a href="assets/Blitz.Brian_Resume_ES.pdf" target="_blank">Currículum (PDF)</a> <svg class="inline-doc-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+    </p>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap about-page-content">
+    <h2><span data-lang="en">Education</span><span data-lang="es" hidden>Educación</span></h2>
+    <p>
+      <span data-lang="en"><strong>M.S. in Data Analytics</strong> — Colorado State University Global Campus, June 2023</span>
+      <span data-lang="es" hidden><strong>Maestría en Analítica de Datos</strong> — Colorado State University Global Campus, junio de 2023</span>
+      <br>
+      <span data-lang="en"><strong>B.A. in Anthropology</strong> — UNC Greensboro, December 2015</span>
+      <span data-lang="es" hidden><strong>Licenciatura en Antropología</strong> — UNC Greensboro, diciembre de 2015</span>
+    </p>
+    <p data-lang="en">
+      Anthropology is, at its core, the study of finding patterns in human behavior — which turns out to be
+      most of what data analytics is too, just with numbers instead of fieldwork. The MS was a deliberate,
+      later addition: I chose an online, working-professional program specifically so I could make the shift
+      into analytics without stepping away from full-time work to do it.
+    </p>
+    <p data-lang="es" hidden>
+      La antropología es, en esencia, el estudio de encontrar patrones en el comportamiento humano — que
+      resulta ser, en gran parte, lo mismo que es la analítica de datos, solo que con números en lugar de
+      trabajo de campo. La Maestría fue una incorporación deliberada y posterior: elegí un programa en línea
+      para profesionales que trabajan, específicamente para poder hacer el cambio hacia la analítica sin tener
+      que dejar mi trabajo de tiempo completo para lograrlo.
+    </p>
+  </div>
+</section>
+
+<section id="side-hustles">
+  <div class="wrap about-page-content">
+    <h2><span data-lang="en">Side Hustles</span><span data-lang="es" hidden>Proyectos Paralelos</span></h2>
+    <p data-lang="en">
+      I still tutor ESL on the side — five years of teaching abroad turned out to be a habit I didn't want to
+      fully put down, even after the data career took over.
+    </p>
+    <p data-lang="es" hidden>
+      Todavía doy tutorías de inglés como segunda lengua (ESL) de forma paralela — cinco años enseñando en el
+      extranjero resultaron ser un hábito que no quise abandonar del todo, incluso después de que la carrera
+      en datos tomara protagonismo.
+    </p>
+    <p>
+      <span data-lang="en">📖 Also: writing novels. Unpublished, unhurried, coming eventually.</span>
+      <span data-lang="es" hidden>📖 También: escribiendo novelas. Inéditas, sin prisa, llegarán eventualmente.</span>
+    </p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -61,49 +174,46 @@
       <span data-lang="en">A quick map of what's on this site.</span>
       <span data-lang="es" hidden>Un mapa rápido de lo que hay en este sitio.</span>
     </p>
-    <div class="quick-links">
+    <div class="quick-links quick-links-photo">
       <a href="about.html">
+        <div class="qphoto"><img src="assets/photos/korea-winter.jpg" alt="" loading="lazy"></div>
         <div class="qtitle"><span data-lang="en">About →</span><span data-lang="es" hidden>Acerca de →</span></div>
         <div class="qdesc">
-          <span data-lang="en">Work experience, the data portfolio, and coursework/certifications.</span>
-          <span data-lang="es" hidden>Experiencia laboral, el portafolio de datos y la formación/certificaciones.</span>
+          <span data-lang="en">Work | Portfolio | Certifications</span>
+          <span data-lang="es" hidden>Trabajo | Portafolio | Certificados</span>
         </div>
       </a>
       <a href="books.html">
+        <div class="qphoto"><img src="assets/covers/r-for-data-science.jpg" alt="" loading="lazy"></div>
         <div class="qtitle"><span data-lang="en">Books →</span><span data-lang="es" hidden>Libros →</span></div>
         <div class="qdesc">
-          <span data-lang="en">What I've been reading.</span>
-          <span data-lang="es" hidden>Lo que he estado leyendo.</span>
+          <span data-lang="en">What I've been reading</span>
+          <span data-lang="es" hidden>Lo que he estado leyendo</span>
         </div>
       </a>
       <a href="podcasts.html">
+        <div class="qphoto"><img src="assets/covers/datacast-podcast.jpg" alt="" loading="lazy"></div>
         <div class="qtitle">Podcasts →</div>
         <div class="qdesc">
-          <span data-lang="en">What I've been listening to.</span>
-          <span data-lang="es" hidden>Lo que he estado escuchando.</span>
+          <span data-lang="en">What I've been listening to</span>
+          <span data-lang="es" hidden>Lo que he estado escuchando</span>
         </div>
       </a>
       <a href="articles.html">
+        <div class="qphoto"><img src="assets/photos/lights-festival.jpg" alt="" loading="lazy"></div>
         <div class="qtitle"><span data-lang="en">Articles →</span><span data-lang="es" hidden>Artículos →</span></div>
         <div class="qdesc">
-          <span data-lang="en">Writing, collected from Medium.</span>
-          <span data-lang="es" hidden>Escritos, recopilados de Medium.</span>
+          <span data-lang="en">Writing, collected from Medium</span>
+          <span data-lang="es" hidden>Escritos, recopilados de Medium</span>
         </div>
       </a>
       <a href="coding-portfolio.html">
+        <div class="qphoto"><img src="assets/photos/dog-park.jpg" alt="" loading="lazy"></div>
         <div class="qtitle"><span data-lang="en">Coding Portfolio →</span><span data-lang="es" hidden>Portafolio de Código →</span></div>
         <div class="qdesc">
-          <span data-lang="en">Small builds and side projects.</span>
-          <span data-lang="es" hidden>Proyectos pequeños y experimentos personales.</span>
+          <span data-lang="en">Small builds and side projects</span>
+          <span data-lang="es" hidden>Proyectos pequeños y experimentos</span>
         </div>
-      </a>
-      <a href="assets/Blitz.Brian_Resume.pdf" target="_blank" data-lang="en">
-        <div class="qtitle">Resume →</div>
-        <div class="qdesc">The short version, as a PDF.</div>
-      </a>
-      <a href="assets/Blitz.Brian_Resume_ES.pdf" target="_blank" data-lang="es" hidden>
-        <div class="qtitle">Currículum →</div>
-        <div class="qdesc">La versión corta, en PDF.</div>
       </a>
     </div>
   </div>
@@ -112,8 +222,11 @@
 <footer>
   <div class="wrap">
     <div class="links">
-      <a href="https://github.com/brianravelo28" target="_blank">GitHub</a> ·
-      <a href="mailto:brian.blitz28@gmail.com">brian.blitz28@gmail.com</a>
+      <a href="mailto:brian.blitz28@gmail.com"><span data-lang="en">Email</span><span data-lang="es" hidden>Correo</span></a>
+      <a href="https://www.linkedin.com/in/brian-rafael-blitz-70553494/" target="_blank">LinkedIn</a>
+      <a href="https://medium.com/@brian.blitz28" target="_blank">Medium</a>
+      <a class="resume-pill" href="assets/Blitz.Brian_Resume.pdf" target="_blank" data-lang="en">Resume</a>
+      <a class="resume-pill" href="assets/Blitz.Brian_Resume_ES.pdf" target="_blank" data-lang="es" hidden>Currículum</a>
     </div>
   </div>
 </footer>
