@@ -376,6 +376,9 @@ section p { color: var(--text-muted); }
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 18px;
 }
+body[data-title-en^="Data Portfolio"] .grid {
+  grid-template-columns: repeat(3, 1fr);
+}
 .card {
   background: var(--bg-elev);
   border: 1px solid var(--border);
