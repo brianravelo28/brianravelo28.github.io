@@ -56,7 +56,7 @@
       <div class="card reveal">
         <span class="industry"><span data-lang="en">Healthcare</span><span data-lang="es" hidden>Salud</span></span>
         <h4><span data-lang="en">Synthetic Hospital Database</span><span data-lang="es" hidden>Base de Datos Hospitalaria Sintética</span></h4>
-        <a class="card-photo" href="https://github.com/brianravelo28/synthetic-hospital-db" target="_blank" title="View code on GitHub">
+        <a class="card-photo" href="https://github.com/brianravelo28/synthetic-hospital-db" data-dashboard="https://synthetic-hospital-db.streamlit.app/" target="_blank" title="View code on GitHub">
           <img src="assets/photos/healthcare.jpg" alt="" loading="lazy">
           <p class="finding" data-lang="en">17-table, research-grounded synthetic hospital database with a generate-validate-repair data quality pipeline — no PHI, built from peer-reviewed clinical/operational schemas.</p>
           <p class="finding" data-lang="es" hidden>Base de datos hospitalaria sintética de 17 tablas, fundamentada en investigación, con un pipeline de generación-validación-reparación para la calidad de los datos — sin PHI, construida a partir de esquemas clínicos/operativos revisados por pares.</p>
@@ -179,6 +179,41 @@
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.card-photo[data-dashboard]').forEach(photo => {
+      photo.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLinkChoice(photo.href, photo.dataset.dashboard, photo.closest('.card').querySelector('h4').innerHTML);
+      });
+    });
+
+    function openLinkChoice(repoUrl, dashboardUrl, titleHtml) {
+      const overlay = document.createElement('div');
+      overlay.className = 'link-choice-overlay';
+      overlay.innerHTML = `
+        <div class="link-choice-box">
+          <button type="button" class="link-choice-close" aria-label="Close">&times;</button>
+          <h4>${titleHtml}</h4>
+          <div class="link-choice-actions">
+            <a href="${repoUrl}" target="_blank" rel="noopener"><span data-lang="en">View Repository</span><span data-lang="es" hidden>Ver Repositorio</span></a>
+            <a href="${dashboardUrl}" target="_blank" rel="noopener"><span data-lang="en">View Dashboard</span><span data-lang="es" hidden>Ver Panel</span></a>
+          </div>
+        </div>`;
+      document.body.appendChild(overlay);
+      requestAnimationFrame(() => overlay.classList.add('is-open'));
+
+      const close = () => {
+        overlay.classList.remove('is-open');
+        document.removeEventListener('keydown', onKey);
+        setTimeout(() => overlay.remove(), 200);
+      };
+      const onKey = (e) => { if (e.key === 'Escape') close(); };
+
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      overlay.querySelector('.link-choice-close').addEventListener('click', close);
+      overlay.querySelectorAll('.link-choice-actions a').forEach(a => a.addEventListener('click', () => setTimeout(close, 50)));
+      document.addEventListener('keydown', onKey);
+    }
   });
 </script>
 <script src="assets/lang.js"></script>
