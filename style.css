@@ -294,6 +294,17 @@ header.hero h1 {
 }
 header.hero .links a { border-color: rgba(255,255,255,0.4); color: #fff; }
 header.hero .links a:hover { border-color: var(--accent2); background: rgba(255,255,255,0.14); }
+
+/* Mobile: the nav wraps onto multiple lines at narrow widths and was tall
+   enough to run into the hero-content title (pinned at top:40%). Give the
+   box more room and anchor the title to the bottom instead, so it can't
+   collide with the nav regardless of how many lines it wraps to. */
+@media (max-width: 640px) {
+  header.hero { height: auto; min-height: 640px; }
+  header.hero .hero-content { top: auto; bottom: 32px; }
+  header.hero h1 { font-size: 2.4rem; }
+  .hero .taglines p.tagline-leak { white-space: normal; max-width: 380px; }
+}
 .links { display: flex; gap: 14px; flex-wrap: wrap; }
 .links a {
   padding: 9px 16px;
@@ -431,58 +442,38 @@ body[data-title-en^="Data Portfolio"] .grid {
 .card-photo:focus-visible .finding {
   opacity: 1;
 }
+.card-photo.has-split { cursor: pointer; }
 
-.link-choice-overlay {
-  position: fixed;
+.link-split {
+  position: absolute;
   inset: 0;
-  background: rgba(6,9,13,0.75);
+  z-index: 2;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.card-photo.has-split.is-open .link-split {
+  opacity: 1;
+  pointer-events: auto;
+}
+.card-photo.has-split.is-open .finding {
+  opacity: 0 !important;
+}
+.link-split a {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  padding: 24px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-.link-choice-overlay.is-open { opacity: 1; }
-.link-choice-box {
-  position: relative;
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px 24px;
-  max-width: 360px;
-  width: 100%;
-  text-align: center;
-  transform: translateY(8px);
-  transition: transform 0.2s ease;
-}
-.link-choice-overlay.is-open .link-choice-box { transform: translateY(0); }
-.link-choice-box h4 { margin: 0 0 18px; font-size: 1.05rem; color: var(--text); }
-.link-choice-actions { display: flex; flex-direction: column; gap: 10px; }
-.link-choice-actions a {
-  display: block;
-  padding: 10px 16px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text);
+  background: rgba(6,9,13,0.8);
+  color: #f4f7fa;
   font-size: 0.94rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  font-weight: 600;
+  transition: background 0.2s ease;
 }
-.link-choice-actions a:hover { border-color: var(--accent); background: rgba(255,255,255,0.04); }
-.link-choice-close {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  font-size: 1.3rem;
-  line-height: 1;
-  cursor: pointer;
-  padding: 4px 8px;
-}
-.link-choice-close:hover { color: var(--text); }
+.link-split a:hover,
+.link-split a:focus-visible { background: rgba(6,9,13,0.94); }
+.link-split a:not(:last-child) { border-right: 1px solid rgba(244,247,250,0.35); }
 
 /* Simple list rows (MOOCs, and later Books/Podcasts/Articles) */
 .item-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
