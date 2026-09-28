@@ -13,10 +13,30 @@
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+/* UI chrome (labels, metadata, pills, nav-adjacent text) stays on the sans
+   heading face — only actual reading copy (paragraphs, quotes, taglines)
+   uses the EB Garamond body serif set as the page default above. */
+.links a,
+.quick-links .qtitle,
+.quick-links .qdesc,
+.card .industry,
+.tags span,
+.category-label,
+.item-list .item-title,
+.item-list .item-meta,
+.creator-label .creator-name,
+.article-title,
+.article-card .article-meta,
+section .section-sub {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -27,7 +47,7 @@ a:hover { text-decoration: underline; }
 nav.site-nav {
   border-bottom: 1px solid var(--border);
   padding: 20px 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   animation: nav-fade-in 0.5s ease 0.35s backwards;
 }
 nav.site-nav .wrap {
@@ -364,6 +384,63 @@ header.hero .links a:hover { border-color: var(--accent2); background: rgba(255,
 .quick-links-photo img[src*="datacast"] { object-fit: contain; object-position: center; }
 .quick-links-photo img[src*="dog-park"] { object-position: center 64%; }
 
+/* Work Experience — each era gets a small photo beside its text (not a
+   dominant banner), alternating sides down the page so it reads as a
+   rhythm rather than one flat repeating stack. Photo is sized to roughly
+   match the text block's visual weight, not the box's full column width. */
+/* Widened just for this page: matching photo height to a 2-paragraph text
+   block needs more horizontal room than the sitewide 720px prose column
+   allows without crushing the text column down to an unreadable width. */
+body[data-title-en^="Work Experience"] .about-page-content { max-width: 980px; }
+
+/* .exp-photo's exact width/height are set by JS (see the inline script
+   near the end of this page) to genuinely match the .exp-text block's
+   real height at 4:5 aspect — CSS alone (aspect-ratio + stretch in a flex
+   row) resolved inconsistently across rows in testing (some widths
+   collapsed to ~0, others overflowed), so this is measured in JS instead.
+   The values below are just a sane pre-JS fallback. */
+.exp-row {
+  display: flex;
+  gap: 36px;
+  align-items: stretch;
+  margin: 0 0 48px;
+}
+.exp-row-reverse { flex-direction: row-reverse; }
+.exp-photo {
+  position: relative;
+  flex: 0 0 auto;
+  width: 340px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.exp-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Required attribution for the one CC BY-SA photo on this page (Fenway
+   Park's scoreboard) — every other photo here is Unsplash License, which
+   doesn't require credit, so this stays scoped to just that one image. */
+.exp-photo .photo-credit {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.8);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.85);
+}
+.exp-photo .photo-credit:hover { color: #fff; text-decoration: underline; }
+.exp-text { flex: 0 0 480px; width: 480px; }
+.exp-text h3 { margin-top: 0; }
+@media (max-width: 760px) {
+  .exp-row, .exp-row-reverse { flex-direction: column; }
+  .exp-photo { width: 100% !important; max-width: 320px; height: auto !important; aspect-ratio: 4 / 5; }
+  .exp-text { width: 100%; flex-basis: auto; }
+}
+
 section { padding: 48px 0; }
 section + section { border-top: 1px solid var(--border); }
 section h2 { font-size: 1.5rem; margin: 0 0 8px; }
@@ -491,23 +568,38 @@ body[data-title-en^="Data Portfolio"] .grid {
 .item-list .item-card-link { display: block; color: inherit; }
 .item-list .item-card-link:hover { text-decoration: none; }
 .item-list .item-card-link:hover .item-title { text-decoration: underline; }
-.item-list .item-photo { width: 100%; aspect-ratio: 21 / 9; }
+.item-list .item-photo { position: relative; width: 100%; aspect-ratio: 21 / 9; overflow: hidden; }
 .item-list .item-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .item-list .item-body { padding: 14px 18px; }
 .item-list .item-title { color: var(--text); font-weight: 600; font-size: 0.95rem; }
 .item-list a.item-title:hover { text-decoration: underline; }
 .item-list .item-meta { color: var(--text-muted); font-size: 0.94rem; margin-top: 2px; }
-.item-list .item-quote {
-  color: var(--text-muted);
-  font-size: 0.94rem;
-  font-style: italic;
+/* Hover-reveal overlay on the photo, matching the .card-photo .finding pattern
+   used elsewhere on the site — only .item-photo (Coding Portfolio) has an
+   .item-quote inside it; the plain text-list .item-quote no longer exists. */
+.item-list .item-photo .item-quote {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 36px 14px 12px;
+  background: linear-gradient(to top, rgba(6,9,13,0.97) 60%, rgba(6,9,13,0) 100%);
+  color: #f4f7fa;
+  font-size: 0.98rem;
+  font-style: normal;
   line-height: 1.5;
-  margin-top: 8px;
-  padding-left: 12px;
-  border-left: 2px solid var(--border);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
+.item-list .item-card-link:hover .item-photo .item-quote,
+.item-list .item-card-link:focus-visible .item-photo .item-quote {
+  opacity: 1;
+}
+body[data-title-en^="Coding Portfolio"] .item-title { font-size: 1.08rem; }
 .category-label {
   font-size: 0.94rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text-muted);
