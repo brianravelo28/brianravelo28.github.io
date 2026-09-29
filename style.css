@@ -205,7 +205,13 @@ header.page-head.has-photo nav.site-nav .resume-pill { border-color: rgba(255,25
 header.page-head.has-photo nav.site-nav .resume-pill:hover { background: rgba(255,255,255,0.14); border-color: #fff; }
 
 /* Per-banner focal point overrides where the default center-30% crop misses the subject */
-body[data-title-en^="Work Experience"] .page-head-bg img { object-position: center 50% !important; }
+/* This banner's source photo is a tall circular mural (swirl headdress
+   down through the face) — the shared 52vh box is too short at wide
+   viewports to show both without cropping one away entirely, so this page
+   gets a taller box plus a position biased toward the face while still
+   keeping a good amount of the hair swirl in frame. */
+body[data-title-en^="Work Experience"] header.page-head.has-photo { min-height: 68vh; }
+body[data-title-en^="Work Experience"] .page-head-bg img { object-position: center 80% !important; }
 body[data-title-en^="Articles"] .page-head-bg img { object-position: center 49% !important; }
 body[data-title-en^="Books"] .page-head-bg img { object-position: center 45% !important; }
 
@@ -428,7 +434,7 @@ body[data-title-en^="Work Experience"] .about-page-content { max-width: 980px; }
   right: 8px;
   bottom: 8px;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.88rem;
   color: rgba(255,255,255,0.8);
   text-shadow: 0 1px 3px rgba(0,0,0,0.85);
 }
@@ -602,7 +608,7 @@ body[data-title-en^="Coding Portfolio"] .item-title { font-size: 1.08rem; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--text);
   margin: 28px 0 10px;
 }
 .category-label:first-child { margin-top: 0; }
