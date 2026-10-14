@@ -115,17 +115,17 @@
 
       <div class="card reveal">
         <span class="industry"><span data-lang="en">Real Estate</span><span data-lang="es" hidden>Bienes Raíces</span></span>
-        <h4><span data-lang="en">Miami Property Price Estimator</span><span data-lang="es" hidden>Estimador de Precios de Propiedades en Miami</span></h4>
+        <h4><span data-lang="en">Miami Home Sales Explorer</span><span data-lang="es" hidden>Explorador de Ventas de Viviendas en Miami</span></h4>
         <div class="card-photo has-split" tabindex="0" role="button" aria-haspopup="true">
           <img src="assets/photos/real-estate.jpg" alt="" loading="lazy">
-          <p class="finding" data-lang="en">Adding location and neighborhood features lifts cross-validated R² from 0.61 (property details alone) to 0.76 linear and 0.83 with gradient boosting — yet typical error stays near 27%, capped by ZIP-level location data.</p>
-          <p class="finding" data-lang="es" hidden>Agregar variables de ubicación y de vecindario eleva el R² con validación cruzada de 0,61 (solo datos de la propiedad) a 0,76 en un modelo lineal y a 0,83 con gradient boosting — pero el error típico sigue cerca del 27%, limitado por la ubicación a nivel de código postal.</p>
+          <p class="finding" data-lang="en">A price model on these 990 Miami-Dade and Broward sales reached R² 0.82 but missed by about 28% per home and couldn't price by location reliably (about 7 sales per ZIP), so the dashboard now shows what the sales say: medians by ZIP and property type, with the sample size behind every number.</p>
+          <p class="finding" data-lang="es" hidden>Un modelo de precios con estas 990 ventas de Miami-Dade y Broward alcanzó R² 0,82, pero se equivocaba cerca del 28% por vivienda y no podía fijar precios por ubicación de forma fiable (unas 7 ventas por código postal), así que el panel ahora muestra lo que dicen las ventas: medianas por código postal y tipo de propiedad, con el tamaño de muestra detrás de cada cifra.</p>
           <div class="link-split">
             <a href="https://github.com/brianravelo28/miami-real-estate-ml" target="_blank" rel="noopener"><span data-lang="en">Repo</span><span data-lang="es" hidden>Repositorio</span></a>
             <a href="https://miami-real-estate-ml.onrender.com/" target="_blank" rel="noopener"><span data-lang="en">Dashboard</span><span data-lang="es" hidden>Panel</span></a>
           </div>
         </div>
-        <div class="tags"><span>LightGBM</span><span>SHAP</span><span>Streamlit</span><span>Folium</span></div>
+        <div class="tags"><span>pandas</span><span>Streamlit</span><span>Plotly</span><span>Folium</span></div>
       </div>
 
       <div class="card reveal">
@@ -175,17 +175,17 @@
 
       <div class="card reveal">
         <span class="industry"><span data-lang="en">Labor Economics</span><span data-lang="es" hidden>Economía Laboral</span></span>
-        <h4><span data-lang="en">Occupation Displacement Forecaster &amp; Real Wage Tracker</span><span data-lang="es" hidden>Pronosticador de Desplazamiento Laboral y Seguimiento de Salarios Reales</span></h4>
+        <h4><span data-lang="en">Occupation Employment &amp; Real Wage Tracker</span><span data-lang="es" hidden>Seguimiento de Empleo Ocupacional y Salarios Reales</span></h4>
         <div class="card-photo has-split" tabindex="0" role="button" aria-haspopup="true">
           <img src="assets/photos/labor-market.jpg" alt="" loading="lazy">
-          <p class="finding" data-lang="en">11 years of BLS OEWS data with CPI-adjusted wages and JOLTS job openings, feeding a LightGBM employment forecaster validated against a no-change baseline (a small edge, and the dashboard says so) — the standout finding: for the same job, Florida pays about 8% less than the national figure, not the premium the project assumed going in.</p>
-          <p class="finding" data-lang="es" hidden>11 años de datos OEWS del BLS con salarios ajustados por inflación (IPC) y ofertas de empleo de JOLTS, que alimentan un pronosticador de empleo con LightGBM validado contra una referencia de «sin cambio» (una ventaja pequeña, y el panel lo indica) — el hallazgo más notable: por el mismo puesto, Florida paga cerca de 8% menos que el promedio nacional, contrario a la prima que el proyecto asumía al inicio.</p>
+          <p class="finding" data-lang="en">11 years of BLS OEWS data with CPI-adjusted wages and JOLTS job openings — the standout finding: for the same job, Florida pays about 8% less than the national figure, not the premium the project assumed going in, and in 2021–22 more than 80% of US occupations saw their pay fall behind inflation.</p>
+          <p class="finding" data-lang="es" hidden>11 años de datos OEWS del BLS con salarios ajustados por inflación (IPC) y ofertas de empleo de JOLTS — el hallazgo más notable: por el mismo puesto, Florida paga cerca de 8% menos que el promedio nacional, contrario a la prima que el proyecto asumía al inicio, y en 2021–22 más del 80% de las ocupaciones de EE. UU. vio su salario quedar por debajo de la inflación.</p>
           <div class="link-split">
             <a href="https://github.com/brianravelo28/labor-market-displacement-forecaster" target="_blank" rel="noopener"><span data-lang="en">Repo</span><span data-lang="es" hidden>Repositorio</span></a>
             <a href="https://labor-market-displacement-forecaster.onrender.com/" target="_blank" rel="noopener"><span data-lang="en">Dashboard</span><span data-lang="es" hidden>Panel</span></a>
           </div>
         </div>
-        <div class="tags"><span>LightGBM</span><span>Plotly Dash</span><span>BLS OEWS</span></div>
+        <div class="tags"><span>Plotly Dash</span><span>BLS OEWS</span><span>JOLTS</span></div>
       </div>
 
     </div>
