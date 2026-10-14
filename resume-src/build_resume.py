@@ -94,7 +94,7 @@ EN = {
     "headline": "Data Analyst · Python · SQL · Power BI",
     "contact": "brian.blitz28@gmail.com &nbsp;&nbsp;·&nbsp;&nbsp; (919) 395-3489 &nbsp;&nbsp;·&nbsp;&nbsp; Las Vegas, NV "
                "&nbsp;&nbsp;·&nbsp;&nbsp; <link href=\"https://brblitz.com\"><font color=\"#2C5A85\">brblitz.com</font></link> "
-               "&nbsp;&nbsp;·&nbsp;&nbsp; <link href=\"https://www.linkedin.com/in/brian-blitz-70553494/\"><font color=\"#2C5A85\">LinkedIn</font></link>",
+               "&nbsp;&nbsp;·&nbsp;&nbsp; <link href=\"https://www.linkedin.com/in/brblitz/\"><font color=\"#2C5A85\">LinkedIn</font></link>",
     "summary": "Analytics professional with nearly 4 years of experience, an MS in Data Analytics, and demonstrated expertise in "
                "quantitative analysis, performance monitoring, and data-driven optimization. Well-versed in building automated systems for "
                "data management, analysis, and reporting to support decision-making in fast-moving environments.",
@@ -152,7 +152,7 @@ ES = {
     "headline": "Analista de Datos · Python · SQL · Power BI",
     "contact": "brian.blitz28@gmail.com &nbsp;&nbsp;·&nbsp;&nbsp; (919) 395-3489 &nbsp;&nbsp;·&nbsp;&nbsp; Las Vegas, NV "
                "&nbsp;&nbsp;·&nbsp;&nbsp; <link href=\"https://brblitz.com\"><font color=\"#2C5A85\">brblitz.com</font></link> "
-               "&nbsp;&nbsp;·&nbsp;&nbsp; <link href=\"https://www.linkedin.com/in/brian-blitz-70553494/\"><font color=\"#2C5A85\">LinkedIn</font></link>",
+               "&nbsp;&nbsp;·&nbsp;&nbsp; <link href=\"https://www.linkedin.com/in/brblitz/\"><font color=\"#2C5A85\">LinkedIn</font></link>",
     "summary": "Profesional de analítica con casi 4 años de experiencia, una maestría en Analítica de Datos, y experiencia "
                "demostrada en análisis cuantitativo, monitoreo de rendimiento y optimización basada en datos. Con amplia experiencia "
                "en la construcción de sistemas automatizados para la gestión, el análisis y la generación de reportes de datos, en "
